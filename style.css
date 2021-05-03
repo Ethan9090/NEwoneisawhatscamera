@@ -1,0 +1,14 @@
+#headinger{
+    background-color: aquamarine;
+    border: teal 3px solid;
+}
+
+#inputpower{
+    border: springgreen 10px solid;
+    border-radius: 20px;
+}
+
+#startbutton{
+    background-color: slategray;
+    border: snow solid 5px;
+}
