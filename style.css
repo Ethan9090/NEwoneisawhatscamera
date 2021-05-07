@@ -12,3 +12,7 @@
     background-color: slategray;
     border: snow solid 5px;
 }
+
+canvas{
+    margin-top: 100px;
+}
