@@ -1,6 +1,7 @@
 status = "";
 coco = [];
-
+start = "";
+item = "";
 function preload(){
 }
 
@@ -30,21 +31,24 @@ function gotResult(error, results){
 }
 
 function draw(){
+
+    item = document.getElementById("inputpower").value;
+    console.log(item);
     
     image(camera,0,0,500,350);
         
-    if(status != ""){
+    if(status != "" & item != ""){
     modeL.detect(camera,gotResult);
+
 
     for(i=0; i < coco.length; i++){
 
-            mypercent = floor(coco[i].confidence*100) + "%";
-
-            fill(100,21,69);
-            text(coco[i].label + " " + mypercent,coco[i].x + 15,coco[i].y + 15);
-            noFill();
-            stroke(231,5,8);
-            rect(coco[i].x,coco[i].y,coco[i].width,coco[i].height);
+            if(coco[i].label == item){
+                document.getElementById("the-items").innerHTML = "there is a " + item;
+            }
+            else{
+                document.getElementById("the-items").innerHTML = "i dont see a " + item;
+            }
 
         }
     }
